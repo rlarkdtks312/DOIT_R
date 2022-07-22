@@ -82,3 +82,38 @@ paste(str5, collapse = ',')
 paste(str5, collapse = ' ') # 깔끔
 str5_paste <- paste(str5, collapse = ' ')
 str5_paste
+
+x
+x_mean <- mean(x)
+x_mean
+
+# 03-3 함수 꾸러미, '패키지' 이해하기
+# 패키지란 여러 함수가 들어있는 꾸러미이다.
+# R에서 특정 함수를 사용하려면 패키지 설치를 먼저 하여야 한다.
+
+# ggplot2 패키지 설치하기
+install.packages("ggplot2")
+
+# ggplot2 패키지 로드
+library(ggplot2)
+
+x <- c('a','a','b','c')
+x
+
+# 빈도 막대 그래프 출력
+qplot(x)
+
+# ggplot2의 mpg 데이터로 그래프 만들기
+# data에 mpg, x축에 hwy 변수 지정해 그래프 생성
+qplot(data = mpg, x = hwy)
+
+# qplot()의 다양한 파라미터 알아보기
+
+qplot(data = mpg, x = cty)
+qplot(data = mpg, x = drv, y = hwy)
+qplot(data = mpg, x = drv, y = hwy, geom = 'line') # 선그래프
+qplot(data = mpg, x = drv, y = hwy, geom = 'boxplot') # 박스 그래프
+qplot(data = mpg, x = drv, y = hwy, geom = 'boxplot', colour = drv) # drv별 색 표현
+
+# qplot()  메뉴얼 출력
+?qplot
